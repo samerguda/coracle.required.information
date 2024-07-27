@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal and Bank Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Personal and Bank Details</h1>
+    <div id="content">
+        <h2>Personal Details of the Account Holder:</h2>
+        <p>Your Mobile Number: +966548247897</p>
+        <p>Account Holder email address: samerguda@gamil.com</p>
+        <p>Living Street name: darb</p>
+        <p>Living Street No.: 01 darb</p>
+        <p>Living Postcode: 89659</p>
+        <p>Living City: Abha</p>
+        <p>Living Country: Saudi Arabia</p>
+        
+        <h2>Bank Details:</h2>
+        <p>Account holder name: Samer Alsaadni</p>
+        <p>Account No. or IBAN: BE43 9678 5897 7301</p>
+        <p>Bank Name: Wise</p>
+        <p>SWIFT or BIC: TRWIBEB1XXX</p>
+        <p>Bank Street name: Rue du Trône 100, 3rd floor,</p>
+        <p>Bank Street Number: 100</p>
+        <p>Bank Postcode: 1050</p>
+        <p>Bank City: Brussels</p>
+        <p>Bank Country: Belgium</p>
+    </div>
+    <div class="button-container">
+        <button onclick="copyContent()">Copy All Content</button>
+        <button onclick="window.print()">Print</button>
+    </div>
+</div>
+
+<script>
+    function copyContent() {
+        var content = document.getElementById('content').innerText;
+        var textarea = document.createElement('textarea');
+        textarea.value = content;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('Content copied to clipboard!');
+    }
+</script>
+
+</body>
+</html>
